@@ -6,7 +6,6 @@ import React, {useState, useEffect} from 'react';
 function App() {
   const [data, setData] = useState(null)
   useEffect(() => {
-    fetch('http://api.weatherapi.com/v1/forecast.json?key=a35b5c152ed04ad08c743942241704&q=Omaha')
       .then(response => response.json())
       .then(data => {
         setData(data)
