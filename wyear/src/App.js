@@ -2,10 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect} from 'react';
 
-
 function App() {
+  const FREE_WEATHER_API_KEY = process.env.REACT_APP_FREE_WEATHER_API_KEY
   const [data, setData] = useState(null)
   useEffect(() => {
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=${FREE_WEATHER_API_KEY}&q=Omaha`)
       .then(response => response.json())
       .then(data => {
         setData(data)
